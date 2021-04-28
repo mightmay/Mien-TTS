@@ -10,7 +10,6 @@ unidecode==0.4.20
 tensorboardX
 matplotlib
 Pillow
-flask
 tqdm
 inflect
 bokeh==1.4.0
