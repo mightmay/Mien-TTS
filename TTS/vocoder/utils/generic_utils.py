@@ -2,7 +2,7 @@ import re
 import torch
 import importlib
 import numpy as np
-from matplotlib import pyplot as plt
+#from matplotlib import pyplot as plt
 
 #from TTS.tts.utils.visual import plot_spectrogram
 
@@ -42,23 +42,23 @@ def plot_results(y_hat, y, ap, global_step, name_prefix):
     spec_diff = np.abs(spec_fake - spec_real)
 
     # plot figure and save it
-    fig_wave = plt.figure()
-    plt.subplot(2, 1, 1)
-    plt.plot(y)
-    plt.title("groundtruth speech")
-    plt.subplot(2, 1, 2)
-    plt.plot(y_hat)
-    plt.title(f"generated speech @ {global_step} steps")
-    plt.tight_layout()
-    plt.close()
+    # fig_wave = plt.figure()
+    # plt.subplot(2, 1, 1)
+    # plt.plot(y)
+    # plt.title("groundtruth speech")
+    # plt.subplot(2, 1, 2)
+    # plt.plot(y_hat)
+    # plt.title(f"generated speech @ {global_step} steps")
+    # plt.tight_layout()
+    # plt.close()
 
-    figures = {
-        name_prefix + "spectrogram/fake": plot_spectrogram(spec_fake),
-        name_prefix + "spectrogram/real": plot_spectrogram(spec_real),
-        name_prefix + "spectrogram/diff": plot_spectrogram(spec_diff),
-        name_prefix + "speech_comparison": fig_wave,
-    }
-    return figures
+    # figures = {
+    #     name_prefix + "spectrogram/fake": plot_spectrogram(spec_fake),
+    #     name_prefix + "spectrogram/real": plot_spectrogram(spec_real),
+    #     name_prefix + "spectrogram/diff": plot_spectrogram(spec_diff),
+    #     name_prefix + "speech_comparison": fig_wave,
+    # }
+    # return figures
 
 
 def to_camel(text):
