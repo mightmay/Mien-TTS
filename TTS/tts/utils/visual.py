@@ -5,7 +5,7 @@ import torch
 
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-from TTS.tts.utils.text import phoneme_to_sequence, sequence_to_phoneme
+#from TTS.tts.utils.text import phoneme_to_sequence, sequence_to_phoneme
 
 
 def plot_alignment(alignment,
