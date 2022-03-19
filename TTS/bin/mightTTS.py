@@ -23,7 +23,7 @@ def str2bool(v):
     raise argparse.ArgumentTypeError('Boolean value expected.')
 
 
-def mainsynthesize():
+def mainsynthesize(inputstring):
     print("Starting")
 
     # ts --text "Mv baac Saa mu en nyei dorn maiv zuotc ninh mbuo nyei die nyei nyungc zeiv zoux. Ninh mbuo kungx douh ganh duqv nyaanh hnangv, nyanc nyaanh hmuangx yaac mbienv baengh fim nyei leiz. Mv baac ninh mbuo gorngv.  Ninh oix zorqv meih mbuo gauh longx jiex nyei lingh deic caux a ngunc huingx caux ga lanv huingx jiu bun ninh nyei jien."     --model_path model/3k/model110000.pth.tar     --config_path model/3k/config.json
@@ -38,7 +38,7 @@ def mainsynthesize():
     config_path = "config5k90k.json"
     vocoder_path = None
     vocoder_config_path = None
-    textInput = "tin hungh"
+    textInput = inputstring
 
     # RUN THE SYNTHESIS
     # load models
@@ -52,9 +52,9 @@ def mainsynthesize():
     import calendar
     import time
     ts = calendar.timegm(time.gmtime())
-
+    #out_path = str(ts) + ".wav"
+    out_path =  "voice.wav"
     # save the results
-    out_path = "output" + str(ts) + ".wav"
 
     print(" > Saving output to {}".format(out_path))
     synthesizer.save_wav(wav, out_path)

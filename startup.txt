@@ -1,0 +1,6 @@
+echo "might start- for apt install to work on Azure, make sure that the EOL is Unix LF and not windows EOL"
+apt-get update
+apt-get -y install libsndfile1
+echo "downloading pth.tar model from google drive"
+gdown https://drive.google.com/uc?id=1EX5KHqZnhftM2hJskkvCJGa1iJKKE11R
+gunicorn --bind=0.0.0.0 --timeout 600 hello:myapp
