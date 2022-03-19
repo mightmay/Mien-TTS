@@ -10,10 +10,10 @@ def myapp():
 
 
  
-@myapp.route('/outputform/', methods = ['POST'])
+@myapp.route('/outputform/', methods = ['GET','POST'])
 def outputform():
- #   if request.method == 'GET':
- #       return f"The URL /data is accessed directly. Try going to 'homepage' to submit form"
+   if request.method == 'GET':
+        return f"ERROR called GET instead of POST"
     if request.method == 'POST':
         input_form_data = request.form
         inputtext=request.form['inputtext']
