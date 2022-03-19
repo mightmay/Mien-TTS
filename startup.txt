@@ -3,4 +3,4 @@ apt-get update
 apt-get -y install libsndfile1
 echo "downloading pth.tar model from google drive"
 gdown https://drive.google.com/uc?id=1g7ZiOX_3tqNbIpWAbkZ5Y2LqrddH1pNi
-gunicorn --bind=0.0.0.0 --timeout 600 app:myapp
+gunicorn --bind=0.0.0.0 --timeout 600 app:app
